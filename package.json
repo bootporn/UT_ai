@@ -1,0 +1,14 @@
+{
+  "name": "akt-za-vecher",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Договор, акт и счёт для одной сделки самозанятого. Оплата на НПД через ЮKassa.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  }
+}

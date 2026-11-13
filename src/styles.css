@@ -1,0 +1,163 @@
+:root {
+  --paper: #f3efe4;
+  --ink: #1e1a16;
+  --stamp: #8c2f2f;
+  --line: #d9d0c1;
+  --card: #fffaf3;
+  --test: #e6b325;
+  --ok: #1f4d3a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+main {
+  width: min(46rem, calc(100% - 2rem));
+  margin: 0 auto 3rem;
+}
+
+h1, h2, h3, .mark {
+  font-family: Georgia, "Iowan Old Style", Palatino, serif;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.4rem); margin: 0.2rem 0 1rem; }
+
+a { color: var(--stamp); }
+
+.site-head, .site-foot {
+  width: min(46rem, calc(100% - 2rem));
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 1.2rem 0;
+}
+
+.mark {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+.head-price { font-variant-numeric: tabular-nums; }
+
+.banner {
+  padding: 0.85rem 1rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.banner.test { background: var(--test); color: var(--ink); }
+.banner.stop, .banner.bad { background: var(--stamp); color: white; }
+.banner.rehearsal { background: #d5ddd4; color: var(--ink); }
+.banner ul { text-align: left; display: inline-block; margin: 0.4rem 0 0; }
+
+.hero { padding-top: 1rem; }
+.eyebrow { letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.78rem; margin-bottom: 0.4rem; }
+.lead { font-size: 1.2rem; max-width: 38rem; }
+.price-row { display: flex; gap: 0.8rem; align-items: baseline; }
+.price-row strong { font-family: Georgia, serif; font-size: 2.4rem; }
+
+.button, button {
+  background: var(--ink);
+  color: var(--paper);
+  border: 0;
+  padding: 0.9rem 1.2rem;
+  font: inherit;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.plain { padding-left: 1.2rem; }
+.plain li { margin: 0.45rem 0; }
+.note { border-top: 1px solid var(--line); padding-top: 0.5rem; }
+
+form { display: grid; gap: 0.9rem; }
+fieldset {
+  border: 1px solid var(--line);
+  background: var(--card);
+  margin: 0;
+  padding: 1rem;
+  display: grid;
+  gap: 0.8rem;
+}
+legend { font-family: Georgia, serif; padding: 0 0.3rem; }
+label { display: grid; gap: 0.25rem; }
+input, textarea, select {
+  font: inherit;
+  font-size: 1rem;
+  padding: 0.65rem 0.7rem;
+  border: 1px solid #b7ad9e;
+  background: white;
+  color: var(--ink);
+  width: 100%;
+}
+.choices { display: flex; gap: 1rem; flex-wrap: wrap; }
+.choice, .check { display: flex; gap: 0.55rem; align-items: flex-start; grid-template-columns: auto 1fr; }
+.choice input, .check input { width: auto; margin-top: 0.25rem; }
+small { color: #5c564c; }
+em { color: var(--stamp); font-style: normal; }
+.bad-field input, .bad-field textarea { border-color: var(--stamp); }
+.form-errors { background: #f8e6e1; padding: 0.8rem 1rem; }
+
+.pay-box, .stop-note {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 1rem;
+  margin: 1rem 0 1.5rem;
+}
+.paid-box { border-color: var(--ok); }
+.price-call strong { font-family: Georgia, serif; font-size: 1.8rem; }
+
+.sheet {
+  background: white;
+  color: black;
+  padding: 1.5rem 1.3rem 2rem;
+  margin: 1rem 0;
+  box-shadow: 0 10px 30px rgba(30, 26, 22, 0.06);
+  font-family: Georgia, "Iowan Old Style", serif;
+}
+.sheet.sample {
+  background-image: repeating-linear-gradient(-32deg, transparent, transparent 42px, rgba(140, 47, 47, 0.07) 42px, rgba(140, 47, 47, 0.07) 43px);
+}
+.sheet h1 { font-size: 1.55rem; text-align: center; }
+.sheet h2 { font-size: 1.15rem; margin: 1.2rem 0 0.3rem; }
+.doc-num, .doc-place { text-align: center; }
+.doc-place { display: flex; justify-content: space-between; gap: 1rem; }
+.stamp { text-align: center; font-weight: 700; letter-spacing: 0.03em; }
+.stamp.sample { color: var(--stamp); }
+.stamp.paid { color: var(--ok); }
+.req-grid, .sign-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.req-label { font-size: 0.8rem; letter-spacing: 0.03em; text-transform: uppercase; }
+.doc-note { font-size: 0.85rem; color: #444; }
+table { width: 100%; border-collapse: collapse; margin: 0.8rem 0; }
+th, td { border: 1px solid #222; padding: 0.4rem 0.5rem; vertical-align: top; text-align: left; }
+.ledger td:nth-child(n+2), .ledger tfoot td { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.scroll-table { overflow-x: auto; }
+
+:focus-visible { outline: 3px solid var(--stamp); outline-offset: 2px; }
+
+@media (max-width: 640px) {
+  .req-grid, .sign-grid, .site-head, .site-foot { display: grid; }
+  .site-head, .site-foot { width: min(46rem, calc(100% - 1.2rem)); }
+  main { width: min(46rem, calc(100% - 1.2rem)); }
+}
+
+@media print {
+  .no-print, .site-head, .site-foot, .banner { display: none !important; }
+  body { background: white; }
+  main { width: auto; margin: 0; }
+  .sheet { box-shadow: none; margin: 0; page-break-after: always; }
+}
